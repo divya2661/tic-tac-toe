@@ -7,10 +7,17 @@
 (defn get-cell [s]
   (- (Integer/parseInt s) 1))
 
+(defn- get-input [board player]
+  (if (= player :computer)
+    (get-valid-move board)
+    (get-cell (read-line))))
+
 (defn game-start [board player]
+  (println "\n==================================\n")
   (print-board board)
-  (let [input (get-cell (read-line))]
+  (let [input (get-input board player)]
     (if (valid-input? board input)
+
       (let [updated-board (updated-board board input (get-player-marker player))]
         (if (win? updated-board)
           ((println (str "Congrats: player " (get-player-marker player) " you win"))
