@@ -1,36 +1,32 @@
 # tic-tac-toe
+This is a small tic-tac-toe which uses randomized moves to play against user. 
+You can't really predict the next move of it. :P 
 
-FIXME: description
+## Local Setup
 
-## Installation
+### Setup leiningen
 
-Download from http://example.com/FIXME.
+```
+$ brew install leiningen
+```
 
 ## Usage
 
-FIXME: explanation
+###Run tests:
 
-    $ java -jar tic-tac-toe-0.1.0-standalone.jar [args]
+```
+$ lein test
+```
 
-## Options
+###To start the game
 
-FIXME: listing of options this app accepts.
+```
+$ lein run
+```
 
-## Examples
+Or compile into an uberjar and run with java:
 
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2018 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+```
+$ lein uberjar
+$ java -jar target/allocation-service-<version>-standalone.jar
+```
