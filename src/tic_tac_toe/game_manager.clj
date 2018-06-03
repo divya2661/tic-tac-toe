@@ -11,5 +11,5 @@
     (and p1 p2 p3 (= p1 p2 p3) (not= p1 nil))))
 
 (defn win? [board]
-  (let [first (first (take-while #(win-condition-met? board %) win-conditions))]
+  (let [first (first (drop-while #(not= true (win-condition-met? board %)) win-conditions))]
     (if first true false)))
