@@ -16,6 +16,10 @@
 (defn cell-empty? [board cell-number]
   (if (nil? (nth board cell-number)) true false))
 
+(defn valid-input? [board cell-number]
+  (if (and (< cell-number 9)
+           (cell-empty? board cell-number)) true false))
+
 (defn print-board [board]
   (println (apply str
                   (map-indexed (fn [idx itm]

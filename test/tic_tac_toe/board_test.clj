@@ -8,3 +8,9 @@
 (deftest cell-empty?-test
   (is (= (cell-empty? [nil nil nil] 0) true))
   (is (= (cell-empty? [nil "X" nil] 1) false)))
+
+(deftest valid-input?-test
+  (let [board [nil "X" nil nil nil nil nil nil nil]]
+    (is (= (valid-input? board 10) false))
+    (is (= (valid-input? board 1) false))
+    (is (= (valid-input? board 2) true))))
