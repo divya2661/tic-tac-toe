@@ -4,8 +4,11 @@
             [tic-tac-toe.game-manager :refer :all]
             [clojure.core]))
 
-(defn get-cell [s]
-  (- (Integer/parseInt s) 1))
+(defn- get-cell [s]
+  (try
+    (- (Integer/parseInt s) 1)
+    (catch NumberFormatException nfe
+      (println "Please type an integer") -1)))
 
 (defn- get-input [board player]
   (if (= player :computer)

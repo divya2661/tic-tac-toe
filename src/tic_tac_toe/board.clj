@@ -18,6 +18,7 @@
 
 (defn valid-input? [board cell-number]
   (if (and (< cell-number 9)
+           (> cell-number -1)
            (cell-empty? board cell-number)) true false))
 
 (defn updated-board [board input marker]

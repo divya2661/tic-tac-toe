@@ -12,6 +12,7 @@
 (deftest valid-input?-test
   (let [board [nil "X" nil nil nil nil nil nil nil]]
     (is (= (valid-input? board 10) false))
+    (is (= (valid-input? board -1) false))
     (is (= (valid-input? board 1) false))
     (is (= (valid-input? board 2) true))))
 
