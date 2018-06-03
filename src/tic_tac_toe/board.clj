@@ -20,6 +20,11 @@
   (if (and (< cell-number 9)
            (cell-empty? board cell-number)) true false))
 
+(defn updated-board [board input marker]
+  (if (valid-input? board input)
+    (assoc board input marker)
+    board))
+
 (defn print-board [board]
   (println (apply str
                   (map-indexed (fn [idx itm]

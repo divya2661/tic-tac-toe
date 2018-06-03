@@ -14,3 +14,8 @@
     (is (= (valid-input? board 10) false))
     (is (= (valid-input? board 1) false))
     (is (= (valid-input? board 2) true))))
+
+(deftest updated-board-test
+  (let [board [nil "X" nil nil nil nil nil nil nil]]
+    (is (= (updated-board board 2 "O") [nil "X" "O" nil nil nil nil nil nil]))
+    (is (= (updated-board board 10 "O") [nil "X" nil nil nil nil nil nil nil]))))
