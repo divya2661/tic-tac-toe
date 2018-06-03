@@ -25,6 +25,10 @@
     (assoc board input marker)
     board))
 
+(defn get-nil-indexes [board]
+  (filter #(not= nil %) (map-indexed (fn [idx itm]
+                             (if (nil? itm) idx nil)) board)))
+
 (defn print-board [board]
   (println (apply str
                   (map-indexed (fn [idx itm]

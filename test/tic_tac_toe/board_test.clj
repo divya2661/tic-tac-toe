@@ -19,3 +19,7 @@
   (let [board [nil "X" nil nil nil nil nil nil nil]]
     (is (= (updated-board board 2 "O") [nil "X" "O" nil nil nil nil nil nil]))
     (is (= (updated-board board 10 "O") [nil "X" nil nil nil nil nil nil nil]))))
+
+(deftest get-nil-indexes-test
+  (is (= (get-nil-indexes [nil nil nil "X" "X" "X" nil]) '(0  1 2 6)))
+  (is (= (get-nil-indexes ["X" "X" "X"]) '())))
