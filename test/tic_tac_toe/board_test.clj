@@ -4,3 +4,7 @@
 
 (deftest create-board-test
   (is (= [nil nil nil nil nil nil nil nil nil] (create-board))))
+
+(deftest cell-empty?-test
+  (is (= (cell-empty? [nil nil nil] 0) true))
+  (is (= (cell-empty? [nil "X" nil] 1) false)))
